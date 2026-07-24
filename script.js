@@ -157,12 +157,14 @@ const navLinks  = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   navLinks.classList.toggle('open');
+  document.body.classList.toggle('menu-open');
 });
 
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
     navLinks.classList.remove('open');
+    document.body.classList.remove('menu-open');
   });
 });
 
