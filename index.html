@@ -231,9 +231,8 @@
             <a href="tel:+421949363438" class="contact-line" id="contactPhone">+421 949 363 438</a>
           </div>
         </div>
-        <form class="contact-form" action="https://formsubmit.co/patrikdzuroska23@gmail.com" method="POST">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/patrikdzuroska23@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://patrikdzuroska.dev">
           <div class="form-row">
             <div class="form-group">
               <label for="formName">Meno</label>

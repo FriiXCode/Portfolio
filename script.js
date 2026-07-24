@@ -201,6 +201,43 @@ filterBtns.forEach(btn => {
   });
 });
 
+// ---- CONTACT FORM ----
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const btn      = document.getElementById('formSubmitBtn');
+  const btnText  = document.getElementById('formBtnText');
+  const successEl = document.getElementById('formSuccess');
+  const form     = document.getElementById('contactForm');
+
+  btn.disabled = true;
+  btnText.textContent = 'Odosielam...';
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    btn.style.display = 'none';
+    successEl.style.display = 'block';
+    form.reset();
+    setTimeout(() => {
+      btn.style.display = 'inline-flex';
+      btn.disabled = false;
+      btnText.textContent = 'Odoslať správu';
+      successEl.style.display = 'none';
+    }, 5000);
+  })
+  .catch(error => {
+    console.error(error);
+    btn.disabled = false;
+    btnText.textContent = 'Chyba. Skúste znova.';
+  });
+}
+
 // ---- ACTIVE NAV ----
 const sections   = document.querySelectorAll('section[id]');
 const navLinkEls = document.querySelectorAll('.nav-link');
