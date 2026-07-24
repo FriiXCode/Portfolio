@@ -418,9 +418,11 @@ strong { color: var(--txt); font-weight: 500; }
 }
 
 .skill-row {
-  display: flex;
-  align-items: center;
-  padding: 22px 0;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: baseline;
+  padding: 28px 0;
   border-top: 1px solid var(--line);
   transition: padding-left var(--t);
 }
@@ -435,11 +437,17 @@ strong { color: var(--txt); font-weight: 500; }
 
 .skill-name {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   font-weight: 700;
   color: var(--txt);
   letter-spacing: -0.02em;
   transition: color var(--t);
+}
+
+.skill-desc {
+  color: var(--txt-2);
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .skill-row:hover .skill-name {
