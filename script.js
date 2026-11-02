@@ -1,262 +1,169 @@
-// ---- NAVBAR SCROLL + BACK TO TOP ----
-const navbar = document.getElementById('navbar');
-const backToTopFixed = document.getElementById('backToTopFixed');
+(() => {
+  const body = document.body;
 
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-  backToTopFixed.classList.toggle('visible', window.scrollY > 300);
-});
-
-// ---- CUSTOM CURSOR ----
-const cursor = document.getElementById('cursor');
-const cursorDot = document.getElementById('cursorDot');
-
-let mouseX = -100, mouseY = -100;
-let cursorX = -100, cursorY = -100;
-
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursorDot.style.left = mouseX + 'px';
-  cursorDot.style.top  = mouseY + 'px';
-  cursor.classList.add('active');
-  cursorDot.classList.add('active');
-});
-
-document.addEventListener('mouseleave', () => {
-  cursor.classList.remove('active');
-  cursorDot.classList.remove('active');
-});
-
-// Smooth cursor follow
-(function animateCursor() {
-  cursorX += (mouseX - cursorX) * 0.1;
-  cursorY += (mouseY - cursorY) * 0.1;
-  cursor.style.left = cursorX + 'px';
-  cursor.style.top  = cursorY + 'px';
-  requestAnimationFrame(animateCursor);
-})();
-
-// Hover expand
-document.querySelectorAll('a, button, .project-item, .skill-row').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-});
-
-// ---- HERO CANVAS - Floating dots ----
-const canvas  = document.getElementById('heroCanvas');
-const ctx     = canvas.getContext('2d');
-
-let W, H, particles;
-
-function resize() {
-  W = canvas.width  = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-}
-
-class Particle {
-  constructor() { this.reset(true); }
-
-  reset(initial) {
-    this.x  = Math.random() * W;
-    this.y  = Math.random() * H;
-    this.r  = Math.random() * 2 + 0.6;
-    this.vx = (Math.random() - 0.5) * 0.28;
-    this.vy = (Math.random() - 0.5) * 0.28;
-    this.a  = Math.random() * 0.65 + 0.25;
-    this.life    = initial ? Math.floor(Math.random() * 400) : 0;
-    this.maxLife = Math.random() * 500 + 300;
+  // ---- Hero entrance: one orchestrated moment ----
+  const start = () => requestAnimationFrame(() => requestAnimationFrame(() => body.classList.add('is-ready')));
+  if (document.fonts && document.fonts.ready) {
+    Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 900))]).then(start);
+  } else {
+    start();
   }
 
-  update() {
-    this.x += this.vx;
-    this.y += this.vy;
-    this.life++;
-
-    // Wrap around screen edges — never disappear
-    if (this.x < -5)  this.x = W + 5;
-    if (this.x > W+5) this.x = -5;
-    if (this.y < -5)  this.y = H + 5;
-    if (this.y > H+5) this.y = -5;
-
-    if (this.life > this.maxLife) this.reset(false);
-  }
-
-  draw() {
-    const progress = this.life / this.maxLife;
-    const fade = progress < 0.15
-      ? progress / 0.15
-      : progress > 0.8
-        ? 1 - (progress - 0.8) / 0.2
-        : 1;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(109,129,150,${this.a * fade})`;
-    ctx.fill();
-  }
-}
-
-function initParticles() {
-  particles = Array.from({ length: 130 }, () => new Particle());
-}
-
-// Mouse repel - works across full page
-let mx = -999, my = -999;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX;
-  my = e.clientY;
-});
-document.addEventListener('mouseleave', () => { mx = -999; my = -999; });
-
-function loop() {
-  ctx.clearRect(0, 0, W, H);
-
-  // Draw faint connecting lines
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 100) {
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(109,129,150,${(1 - dist / 100) * 0.1})`;
-        ctx.lineWidth = 0.6;
-        ctx.stroke();
-      }
+  // ---- Light / dark toggle (system preference until the visitor chooses) ----
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+  const metaLight = document.getElementById('themeColorLight');
+  const metaDark = document.getElementById('themeColorDark');
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : systemDark.matches;
+  const syncToggle = () => {
+    const dark = isDark();
+    const label = dark ? 'Zapnúť svetlý režim' : 'Zapnúť tmavý režim';
+    toggle.setAttribute('aria-pressed', String(dark));
+    toggle.setAttribute('aria-label', label);
+    toggle.title = label;
+    if (root.dataset.theme) {
+      const c = dark ? '#0A0F2E' : '#EEF1F7';
+      metaLight.content = c; metaDark.content = c;
     }
-  }
-
-  particles.forEach(p => {
-    // Mouse repel
-    const dx = p.x - mx;
-    const dy = p.y - my;
-    const dist = Math.sqrt(dx * dx + dy * dy);
-    if (dist < 100) {
-      const force = (100 - dist) / 100;
-      p.x += (dx / dist) * force * 1.5;
-      p.y += (dy / dist) * force * 1.5;
-    }
-    p.update();
-    p.draw();
+  };
+  toggle.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncToggle();
   });
+  systemDark.addEventListener('change', syncToggle);
+  syncToggle();
 
-  requestAnimationFrame(loop);
-}
+  // ---- Nav background once the hero top leaves the viewport ----
+  const navbar = document.getElementById('navbar');
+  const sentinel = document.createElement('div');
+  sentinel.style.cssText = 'position:absolute;top:0;left:0;height:40px;width:1px;pointer-events:none';
+  sentinel.setAttribute('aria-hidden', 'true');
+  body.prepend(sentinel);
+  new IntersectionObserver(([entry]) => {
+    navbar.classList.toggle('is-scrolled', !entry.isIntersecting);
+  }).observe(sentinel);
 
-resize();
-initParticles();
-loop();
-window.addEventListener('resize', () => { resize(); });
+  // ---- Mobile menu ----
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('navLinks');
+  const setMenu = (open) => {
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Zavrieť menu' : 'Otvoriť menu');
+    menu.classList.toggle('is-open', open);
+    body.classList.toggle('menu-open', open);
+  };
+  hamburger.addEventListener('click', () => setMenu(hamburger.getAttribute('aria-expanded') !== 'true'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
-// ---- HAMBURGER ----
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
+  // ---- Current section in nav ----
+  const navLinks = [...document.querySelectorAll('.nav-link')];
+  const navObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach(link => {
+        const current = link.getAttribute('href') === `#${entry.target.id}`;
+        link.classList.toggle('is-current', current);
+        if (current) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main section[id]').forEach(s => navObs.observe(s));
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-  document.body.classList.toggle('menu-open');
-});
+  // ---- Project filter ----
+  const grid = document.getElementById('projectsGrid');
+  const items = [...grid.querySelectorAll('.work')];
+  const buttons = [...document.querySelectorAll('.filter-btn')];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
-    document.body.classList.remove('menu-open');
-  });
-});
-
-// ---- PROJECT FILTER ----
-const filterBtns  = document.querySelectorAll('.filter-btn');
-const projectItems = document.querySelectorAll('.project-item');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
+  buttons.forEach(btn => btn.addEventListener('click', () => {
     const filter = btn.dataset.filter;
-
-    projectItems.forEach((item, i) => {
+    buttons.forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+    grid.classList.toggle('is-filtered', filter !== 'all');
+    items.forEach(item => {
       const match = filter === 'all' || item.dataset.category === filter;
-      item.classList.toggle('hidden', !match);
-
-      if (match) {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(8px)';
-        setTimeout(() => {
-          item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          item.style.opacity = '1';
-          item.style.transform = 'translateY(0)';
-        }, i * 40);
+      item.hidden = !match;
+      if (match && !reduce) {
+        item.animate(
+          [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }],
+          { duration: 450, easing: 'cubic-bezier(.16,1,.3,1)' }
+        );
       }
     });
+  }));
 
-    // Re-number
-    let count = 1;
-    document.querySelectorAll('.project-item:not(.hidden) .project-num').forEach(num => {
-      num.textContent = count.toString().padStart(2, '0');
-      count++;
-    });
-  });
-});
+  // ---- Contact form ----
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('formSubmitBtn');
+  const btnText = document.getElementById('formBtnText');
+  const status = document.getElementById('formStatus');
 
-// ---- CONTACT FORM ----
-function handleFormSubmit(e) {
-  e.preventDefault();
-  const btn      = document.getElementById('formSubmitBtn');
-  const btnText  = document.getElementById('formBtnText');
-  const successEl = document.getElementById('formSuccess');
-  const form     = document.getElementById('contactForm');
+  const messages = {
+    name: 'Napíšte svoje meno.',
+    email: 'Zadajte e-mail v tvare meno@domena.sk.',
+    message: 'Napíšte, s čím vám môžem pomôcť.'
+  };
 
-  btn.disabled = true;
-  btnText.textContent = 'Odosielam...';
-
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: {
-      'Accept': 'application/json'
+  const showError = (field) => {
+    const id = field.id + 'Error';
+    let el = document.getElementById(id);
+    if (field.validity.valid) {
+      field.removeAttribute('aria-invalid');
+      if (el) el.remove();
+      if (field.id === 'formMsg') field.setAttribute('aria-describedby', 'formMsgHelp');
+      else field.removeAttribute('aria-describedby');
+      return true;
     }
-  })
-  .then(response => response.json())
-  .then(data => {
-    btn.style.display = 'none';
-    successEl.style.display = 'block';
-    form.reset();
-    setTimeout(() => {
-      btn.style.display = 'inline-flex';
+    field.setAttribute('aria-invalid', 'true');
+    if (!el) {
+      el = document.createElement('p');
+      el.className = 'field-error';
+      el.id = id;
+      field.parentElement.appendChild(el);
+    }
+    el.textContent = messages[field.name];
+    field.setAttribute('aria-describedby', (field.id === 'formMsg' ? 'formMsgHelp ' : '') + id);
+    return false;
+  };
+
+  const fields = [...form.querySelectorAll('input:not([type=hidden]), textarea')];
+  fields.forEach(f => f.addEventListener('blur', () => { if (f.value) showError(f); }));
+  fields.forEach(f => f.addEventListener('input', () => { if (f.getAttribute('aria-invalid')) showError(f); }));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = '';
+    status.classList.remove('is-error');
+
+    const invalid = fields.filter(f => !showError(f));
+    if (invalid.length) { invalid[0].focus(); return; }
+
+    btn.disabled = true;
+    btnText.textContent = 'Odosielam…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success === 'false' || data.success === false) throw new Error('send failed');
+      form.reset();
+      status.textContent = 'Správa odoslaná. Ozvem sa do 24 hodín.';
+    } catch (err) {
+      status.classList.add('is-error');
+      status.innerHTML = 'Správu sa nepodarilo odoslať. Skúste to znova alebo mi zavolajte na <a href="tel:+421949363438">0949 363 438</a>.';
+    } finally {
       btn.disabled = false;
       btnText.textContent = 'Odoslať správu';
-      successEl.style.display = 'none';
-    }, 5000);
-  })
-  .catch(error => {
-    console.error(error);
-    btn.disabled = false;
-    btnText.textContent = 'Chyba. Skúste znova.';
-  });
-}
-
-// ---- ACTIVE NAV ----
-const sections   = document.querySelectorAll('section[id]');
-const navLinkEls = document.querySelectorAll('.nav-link');
-
-const navObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinkEls.forEach(link => {
-        link.classList.toggle('active-link',
-          link.getAttribute('href') === `#${entry.target.id}`);
-      });
     }
   });
-}, { rootMargin: '-40% 0px -55% 0px' });
-
-sections.forEach(s => navObs.observe(s));
-
-const navStyle = document.createElement('style');
-navStyle.textContent = `.nav-link.active-link { color: var(--txt) !important; }`;
-document.head.appendChild(navStyle);
+})();

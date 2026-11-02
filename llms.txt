@@ -1,0 +1,33 @@
+# Patrik Dzuroška
+
+> Patrik Dzuroška je web developer zo Slovenska. Tvorí e-shopy na platforme Shoptet a weby na WordPresse pre firmy v Česku a na Slovensku, od návrhu po spustenie.
+
+Patrik Dzuroška (also written Patrik Dzuroska) is a Slovak web developer specialising in Shoptet e-shops and WordPress websites for businesses in Slovakia and the Czech Republic.
+
+## Kontakt
+
+- Telefón: 0949 363 438 (medzinárodne +421 949 363 438)
+- E-mail: patrikdzuroska23@gmail.com
+- Web: https://patrikdzuroska.dev/
+- Krajina: Slovensko, pracuje pre klientov zo Slovenska a Česka
+- Jazyky: slovenčina, čeština
+
+## Služby
+
+- Shoptet: tvorba a úprava šablón, vlastné HTML/CSS/JS bloky, optimalizácia e-shopov, príplatkové parametre, kategórie
+- WordPress: tvorba webov, WooCommerce, Elementor, úprava tém a pluginov
+- HTML a CSS: sémantický HTML5, moderný CSS3, responzívny dizajn, animácie
+- JavaScript: vanilla JS, interaktívne komponenty, DOM manipulácia
+
+## Projekty
+
+- [ePultík](https://epultik.cz): Shoptet e-shop, rozvoz čerstvých potravín a catering
+- [Clever Nájem](https://clevernajem.cz): WordPress, redesign hlavnej stránky platformy prenájmu nehnuteľností
+- [Domy Bořanovice](https://domyboranovice.cz): WordPress, prezentačný web pre luxusné rodinné domy
+- [Vetriscience / Traumapet](https://vetriscience.cz): Shoptet e-shop so zvieracími doplnkami stravy
+- [Vodvezu.cz](https://vodvezu.cz): WordPress, redesign webu prepravnej spoločnosti
+- [Sportcode](https://sportcode.cz): Shoptet e-shop pre šport a fitness
+
+## Stránky
+
+- [Portfólio](https://patrikdzuroska.dev/): celé portfólio, kontakty a formulár

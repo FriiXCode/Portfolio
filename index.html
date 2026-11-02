@@ -2,273 +2,371 @@
 <html lang="sk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patrik Dzuroška - Web Developer</title>
-  <meta name="description" content="Patrik Dzuroška - web developer špecializujúci sa na Shoptet a WordPress. Tvorím e-shopy a weby pre firmy na Slovensku a v Čechách." />
-  <meta name="keywords" content="Patrik Dzuroška, web developer, Shoptet, WordPress, portfolio" />
-  <meta property="og:title" content="Patrik Dzuroška - Web Developer" />
-  <meta property="og:description" content="Shoptet & WordPress špecialista. Pozrite si moje projekty." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://patrikdzuroska.dev" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      var d = document.documentElement; d.classList.add('js');
+      try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+    })();
+  </script>
+
+  <title>Patrik Dzuroška | Web developer, Shoptet a WordPress | 0949 363 438</title>
+  <meta name="description" content="Patrik Dzuroška, web developer zo Slovenska. Tvorím e-shopy na Shoptete a weby na WordPresse pre firmy v Česku a na Slovensku. Tel. 0949 363 438, patrikdzuroska23@gmail.com." />
+  <meta name="author" content="Patrik Dzuroška" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://patrikdzuroska.dev/" />
+  <meta name="theme-color" content="#EEF1F7" media="(prefers-color-scheme: light)" id="themeColorLight" />
+  <meta name="theme-color" content="#0A0F2E" media="(prefers-color-scheme: dark)" id="themeColorDark" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="format-detection" content="telephone=yes" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Patrik Dzuroška" />
+  <meta property="og:locale" content="sk_SK" />
+  <meta property="og:locale:alternate" content="cs_CZ" />
+  <meta property="og:url" content="https://patrikdzuroska.dev/" />
+  <meta property="og:title" content="Patrik Dzuroška | Web developer, Shoptet a WordPress" />
+  <meta property="og:description" content="E-shopy na Shoptete a weby na WordPresse pre firmy z Česka a Slovenska. Tel. 0949 363 438." />
+  <meta property="og:image" content="https://patrikdzuroska.dev/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Patrik Dzuroška, web developer. Tel. 0949 363 438" />
+  <meta property="profile:first_name" content="Patrik" />
+  <meta property="profile:last_name" content="Dzuroška" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Patrik Dzuroška | Web developer, Shoptet a WordPress" />
+  <meta name="twitter:description" content="E-shopy na Shoptete a weby na WordPresse. Tel. 0949 363 438." />
+  <meta name="twitter:image" content="https://patrikdzuroska.dev/assets/og-image.jpg" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://patrikdzuroska.dev/#patrik",
+        "name": "Patrik Dzuroška",
+        "alternateName": ["Patrik Dzuroska", "Dzuroška Patrik"],
+        "givenName": "Patrik",
+        "familyName": "Dzuroška",
+        "jobTitle": "Web developer",
+        "description": "Web developer zo Slovenska so zameraním na e-shopy na platforme Shoptet a weby na WordPresse pre firmy v Česku a na Slovensku.",
+        "url": "https://patrikdzuroska.dev/",
+        "image": "https://patrikdzuroska.dev/assets/patrik-dzuroska.jpg",
+        "email": "mailto:patrikdzuroska23@gmail.com",
+        "telephone": "+421949363438",
+        "address": { "@type": "PostalAddress", "addressCountry": "SK" },
+        "knowsLanguage": ["sk", "cs"],
+        "knowsAbout": ["Shoptet", "WordPress", "WooCommerce", "Elementor", "HTML", "CSS", "JavaScript", "Tvorba e-shopov", "Tvorba webstránok", "Responzívny dizajn"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+421949363438",
+          "email": "patrikdzuroska23@gmail.com",
+          "areaServed": ["SK", "CZ"],
+          "availableLanguage": ["Slovak", "Czech"]
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://patrikdzuroska.dev/#sluzby",
+        "name": "Patrik Dzuroška, tvorba webov a e-shopov",
+        "description": "Tvorba a úprava e-shopov na Shoptete a webov na WordPresse. Od návrhu po spustenie.",
+        "url": "https://patrikdzuroska.dev/",
+        "telephone": "+421949363438",
+        "email": "patrikdzuroska23@gmail.com",
+        "image": "https://patrikdzuroska.dev/assets/og-image.jpg",
+        "logo": "https://patrikdzuroska.dev/assets/icon-512.png",
+        "founder": { "@id": "https://patrikdzuroska.dev/#patrik" },
+        "address": { "@type": "PostalAddress", "addressCountry": "SK" },
+        "areaServed": [
+          { "@type": "Country", "name": "Slovensko" },
+          { "@type": "Country", "name": "Česko" }
+        ],
+        "knowsAbout": ["Shoptet", "WordPress", "WooCommerce", "E-shopy"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://patrikdzuroska.dev/#web",
+        "url": "https://patrikdzuroska.dev/",
+        "name": "Patrik Dzuroška",
+        "inLanguage": "sk-SK",
+        "publisher": { "@id": "https://patrikdzuroska.dev/#patrik" }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://patrikdzuroska.dev/#profil",
+        "url": "https://patrikdzuroska.dev/",
+        "name": "Patrik Dzuroška | Web developer, Shoptet a WordPress",
+        "inLanguage": "sk-SK",
+        "dateModified": "2026-11-02",
+        "isPartOf": { "@id": "https://patrikdzuroska.dev/#web" },
+        "about": { "@id": "https://patrikdzuroska.dev/#patrik" },
+        "mainEntity": { "@id": "https://patrikdzuroska.dev/#patrik" },
+        "primaryImageOfPage": "https://patrikdzuroska.dev/assets/patrik-dzuroska.jpg"
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://patrikdzuroska.dev/#projekty",
+        "name": "Projekty Patrika Dzurošku",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "item": { "@type": "CreativeWork", "name": "ePultík", "url": "https://epultik.cz", "image": "https://patrikdzuroska.dev/assets/work/epultik.webp", "about": "Shoptet e-shop", "creator": { "@id": "https://patrikdzuroska.dev/#patrik" } } },
+          { "@type": "ListItem", "position": 2, "item": { "@type": "CreativeWork", "name": "Clever Nájem", "url": "https://clevernajem.cz", "image": "https://patrikdzuroska.dev/assets/work/clever-najem.webp", "about": "WordPress web", "creator": { "@id": "https://patrikdzuroska.dev/#patrik" } } },
+          { "@type": "ListItem", "position": 3, "item": { "@type": "CreativeWork", "name": "Domy Bořanovice", "url": "https://domyboranovice.cz", "image": "https://patrikdzuroska.dev/assets/work/domy-boranovice.webp", "about": "WordPress web", "creator": { "@id": "https://patrikdzuroska.dev/#patrik" } } },
+          { "@type": "ListItem", "position": 4, "item": { "@type": "CreativeWork", "name": "Vetriscience / Traumapet", "url": "https://vetriscience.cz", "image": "https://patrikdzuroska.dev/assets/work/vetriscience.webp", "about": "Shoptet e-shop", "creator": { "@id": "https://patrikdzuroska.dev/#patrik" } } },
+          { "@type": "ListItem", "position": 5, "item": { "@type": "CreativeWork", "name": "Vodvezu.cz", "url": "https://vodvezu.cz", "image": "https://patrikdzuroska.dev/assets/work/vodvezu.webp", "about": "WordPress web", "creator": { "@id": "https://patrikdzuroska.dev/#patrik" } } },
+          { "@type": "ListItem", "position": 6, "item": { "@type": "CreativeWork", "name": "Sportcode", "url": "https://sportcode.cz", "image": "https://patrikdzuroska.dev/assets/work/sportcode.webp", "about": "Shoptet e-shop", "creator": { "@id": "https://patrikdzuroska.dev/#patrik" } } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- FULL PAGE CANVAS BACKGROUND -->
-  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <a class="skip" href="#o-mne">Preskočiť na obsah</a>
 
-  <!-- CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-dot" id="cursorDot"></div>
-
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
+  <header class="nav" id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo" id="navLogo">Patrik Dzuroška</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#o-mne" class="nav-link">O mne</a></li>
-        <li><a href="#zrucnosti" class="nav-link">Zručnosti</a></li>
-        <li><a href="#projekty" class="nav-link">Projekty</a></li>
-        <li><a href="#kontakt" class="nav-link nav-cta">Kontakt</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero hero-centered" id="hero">
-    <div class="hero-inner">
-      <div class="hero-label">Web Developer - Shoptet &amp; WordPress</div>
-      <h1 class="hero-title">
-        Tvorím weby,<br>
-        ktoré <em>predávajú.</em>
-      </h1>
-      <p class="hero-sub">
-        Volám sa Patrik Dzuroška. Pracujem primárne na platformách Shoptet a WordPress - od návrhu až po spustenie. Klientom z celého Česka a Slovenska pomáham budovať weby, ktoré vyzerajú dobre a fungujú ešte lepšie.
-      </p>
-      <div class="hero-actions">
-        <a href="#projekty" class="btn-primary" id="heroProjektyBtn">Zobraziť projekty</a>
-        <a href="#kontakt" class="btn-text" id="heroKontaktBtn">Napísať mi &rarr;</a>
+      <nav class="nav-menu" id="navLinks" aria-label="Hlavná navigácia">
+        <ul>
+          <li><a href="#o-mne" class="nav-link">O mne</a></li>
+          <li><a href="#zrucnosti" class="nav-link">Zručnosti</a></li>
+          <li><a href="#projekty" class="nav-link">Projekty</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+        <a href="tel:+421949363438" class="nav-phone">0949 363 438</a>
+      </nav>
+      <div class="nav-tools">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Zapnúť tmavý režim" title="Zapnúť tmavý režim"></button>
+        <button class="hamburger" id="hamburger" aria-label="Otvoriť menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- O MNE -->
-  <section class="section" id="o-mne">
-    <div class="container">
-      <div class="section-eyebrow">O mne</div>
-      <div class="about-layout">
-        <div class="about-left">
-          <h2 class="section-heading">Web developer<br>so zameraním<br>na výsledky.</h2>
-          <p>
-            Špecializujem sa na tvorbu e-shopov a firemných webstránok na platformách <strong>Shoptet</strong> a <strong>WordPress</strong>. Starám sa o celý proces - od prvého návrhu až po nasadenie a optimalizáciu.
-          </p>
-          <p>
-            Pracoval som na desiatkach projektov pre klientov z celého Česka a Slovenska - od malých podnikateľov až po väčšie e-shopy.
-          </p>
-          <div class="about-contact">
-            <a href="mailto:patrikdzuroska23@gmail.com" class="contact-line" id="aboutEmail">patrikdzuroska23@gmail.com</a>
-            <a href="tel:+421949363438" class="contact-line" id="aboutPhone">+421 949 363 438</a>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="wrap">
+        <h1 class="hero-title">
+          <span class="hero-name">Patrik Dzuroška</span>
+          <span class="hero-claim">
+            <span class="line"><span>Tvorím weby,</span></span>
+            <span class="line"><span>ktoré predávajú.</span></span>
+          </span>
+        </h1>
+
+        <div class="hero-foot">
+          <div class="hero-copy">
+            <p class="hero-sub">E-shopy na Shoptete a weby na WordPresse, od návrhu po spustenie. Pre firmy z Česka a Slovenska.</p>
+            <div class="hero-actions">
+              <a href="#projekty" class="btn" id="heroProjektyBtn">Zobraziť projekty</a>
+              <a href="#kontakt" class="link-u" id="heroKontaktBtn">Napísať mi</a>
+            </div>
           </div>
-        </div>
-        <div class="about-photo-wrap">
-          <img src="assets/photo.png" alt="Patrik Dzuroška" class="about-photo" id="aboutPhoto" />
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ZRUCNOSTI -->
-  <section class="section section-alt" id="zrucnosti">
-    <div class="container">
-      <div class="section-eyebrow">Zručnosti</div>
-      <h2 class="section-heading">Čo ovládam</h2>
-      <div class="skills-list">
-        <div class="skill-row" id="skillShoptet">
-          <div class="skill-name">Shoptet</div>
-          <div class="skill-desc">Tvorba a úprava šablón, vlastné HTML/CSS/JS bloky, optimalizácia e-shopov, príplatkové parametre, kategórie</div>
-        </div>
-        <div class="skill-row" id="skillWordPress">
-          <div class="skill-name">WordPress</div>
-          <div class="skill-desc">Tvorba webov, WooCommerce, Elementor, úprava tém a pluginov</div>
-        </div>
-        <div class="skill-row" id="skillHtml">
-          <div class="skill-name">HTML &amp; CSS</div>
-          <div class="skill-desc">Sémantický HTML5, moderný CSS3, responzívny dizajn, animácie</div>
-        </div>
-        <div class="skill-row" id="skillJs">
-          <div class="skill-name">JavaScript</div>
-          <div class="skill-desc">Vanilla JS, interaktívne komponenty, DOM manipulácia</div>
+          <div class="deck" aria-hidden="true">
+            <a class="deck-card" href="#projectEpultik" tabindex="-1" style="--i:0"><img src="assets/work/epultik.webp" alt="" width="1400" height="695" fetchpriority="high" /></a>
+            <a class="deck-card" href="#projectCleverNajem" tabindex="-1" style="--i:1"><img src="assets/work/clever-najem.webp" alt="" width="1400" height="800" /></a>
+            <a class="deck-card" href="#projectDomyBoranovice" tabindex="-1" style="--i:2"><img src="assets/work/domy-boranovice.webp" alt="" width="1400" height="694" /></a>
+            <a class="deck-card" href="#projectVetriscience" tabindex="-1" style="--i:3"><img src="assets/work/vetriscience.webp" alt="" width="1400" height="931" /></a>
+            <a class="deck-card" href="#projectVodvezu" tabindex="-1" style="--i:4"><img src="assets/work/vodvezu.webp" alt="" width="1400" height="790" /></a>
+            <a class="deck-card" href="#projectSportcode" tabindex="-1" style="--i:5"><img src="assets/work/sportcode.webp" alt="" width="1400" height="788" /></a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJEKTY -->
-  <section class="section" id="projekty">
-    <div class="container">
-      <div class="section-eyebrow">Projekty</div>
-      <h2 class="section-heading">Vybrané práce</h2>
-
-      <div class="projects-filter" id="projectsFilter">
-        <button class="filter-btn active" data-filter="all" id="filterAll">Všetky</button>
-        <button class="filter-btn" data-filter="shoptet" id="filterShoptet">Shoptet</button>
-        <button class="filter-btn" data-filter="wordpress" id="filterWordpress">WordPress</button>
+    <!-- O MNE -->
+    <section class="section about" id="o-mne">
+      <div class="wrap about-grid">
+        <figure class="portrait">
+          <img src="assets/patrik-dzuroska.webp" alt="Patrik Dzuroška, web developer" width="512" height="512" loading="lazy" id="aboutPhoto" />
+        </figure>
+        <div class="about-text">
+          <h2 class="h2">Web developer so zameraním na výsledky.</h2>
+          <p>Špecializujem sa na tvorbu e-shopov a firemných webstránok na platformách <strong>Shoptet</strong> a <strong>WordPress</strong>. Starám sa o celý proces, od prvého návrhu až po nasadenie a optimalizáciu.</p>
+          <p>Pracoval som na desiatkach projektov pre klientov z celého Česka a Slovenska, od malých podnikateľov až po väčšie e-shopy.</p>
+          <dl class="about-contact">
+            <div><dt>E-mail</dt><dd><a href="mailto:patrikdzuroska23@gmail.com" id="aboutEmail">patrikdzuroska23@gmail.com</a></dd></div>
+            <div><dt>Telefón</dt><dd><a href="tel:+421949363438" id="aboutPhone">+421 949 363 438</a></dd></div>
+          </dl>
+        </div>
       </div>
+    </section>
 
-      <div class="projects-list" id="projectsGrid">
-
-        <article class="project-item" data-category="shoptet" id="projectEpultik">
-          <div class="project-meta">
-            <span class="project-type">Shoptet</span>
-            <span class="project-num">01</span>
+    <!-- ZRUCNOSTI -->
+    <section class="section skills" id="zrucnosti">
+      <div class="wrap">
+        <h2 class="h2">Čo ovládam</h2>
+        <div class="skills-main">
+          <div class="skill skill--lead" id="skillShoptet">
+            <h3 class="skill-name">Shoptet</h3>
+            <p>Tvorba a úprava šablón, vlastné HTML/CSS/JS bloky, optimalizácia e-shopov, príplatkové parametre, kategórie.</p>
           </div>
-          <div class="project-body">
-            <h3 class="project-title">ePultík</h3>
-            <p class="project-desc">Rozvoz čerstvých potravín a catering. Vlastné riešenia - bannery, rozvozová mapa, catering sekcia, "Napísali o nás", firemné stránky a produktové šablóny pre lokálnych výrobcov.</p>
-            <a href="https://epultik.cz" target="_blank" rel="noopener" class="project-link" id="linkEpultik">epultik.cz &rarr;</a>
+          <div class="skill skill--lead" id="skillWordPress">
+            <h3 class="skill-name">WordPress</h3>
+            <p>Tvorba webov, WooCommerce, Elementor, úprava tém a pluginov.</p>
           </div>
-          <div class="project-thumb">
-            <img src="assets/ePultik screenshot.jpg" alt="ePultík" />
+        </div>
+        <div class="skills-side">
+          <div class="skill" id="skillHtml">
+            <h3 class="skill-name">HTML &amp; CSS</h3>
+            <p>Sémantický HTML5, moderný CSS3, responzívny dizajn, animácie.</p>
           </div>
-        </article>
-
-        <article class="project-item" data-category="wordpress" id="projectCleverNajem">
-          <div class="project-meta">
-            <span class="project-type">WordPress</span>
-            <span class="project-num">02</span>
+          <div class="skill" id="skillJs">
+            <h3 class="skill-name">JavaScript</h3>
+            <p>Vanilla JS, interaktívne komponenty, DOM manipulácia.</p>
           </div>
-          <div class="project-body">
-            <h3 class="project-title">Clever Nájem</h3>
-            <p class="project-desc">Kompletná úprava hlavnej stránky pre platformu prenájmu nehnuteľností. Nová landing page, sekcie s ikonami, oprava layoutu a celkový redesign homepage.</p>
-            <a href="https://clevernajem.cz" target="_blank" rel="noopener" class="project-link" id="linkCleverNajem">clevernajem.cz &rarr;</a>
-          </div>
-          <div class="project-thumb">
-            <img src="assets/clevernajem screenshot.jpg" alt="Clever Nájem" />
-          </div>
-        </article>
-
-        <article class="project-item" data-category="wordpress" id="projectDomyBoranovice">
-          <div class="project-meta">
-            <span class="project-type">WordPress</span>
-            <span class="project-num">03</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Domy Bořanovice</h3>
-            <p class="project-desc">Prezentačný web pre luxusné rodinné domy. Fotogaléria nehnuteľností, vizualizácie exteriérov a interiérov, pôdorysy a architektonické pohľady.</p>
-            <a href="https://domyboranovice.cz" target="_blank" rel="noopener" class="project-link" id="linkDomyBoranovice">domyboranovice.cz &rarr;</a>
-          </div>
-          <div class="project-thumb">
-            <img src="assets/domy boranovice screenshot.jpg" alt="Domy Bořanovice" />
-          </div>
-        </article>
-
-        <article class="project-item" data-category="shoptet" id="projectVetriscience">
-          <div class="project-meta">
-            <span class="project-type">Shoptet</span>
-            <span class="project-num">04</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Vetriscience / Traumapet</h3>
-            <p class="project-desc">E-shop so zvieracími doplnkami stravy - produkty na imunitný systém, kĺby a zdravie domácich miláčikov. Tvorba kategórií, produktových šablón a CSS štýlovania.</p>
-            <a href="https://vetriscience.cz" target="_blank" rel="noopener" class="project-link" id="linkVetriscience">vetriscience.cz &rarr;</a>
-          </div>
-          <div class="project-thumb">
-            <img src="assets/vetriscience screenshot.jpg" alt="Vetriscience" />
-          </div>
-        </article>
-
-        <article class="project-item" data-category="wordpress" id="projectVodvezu">
-          <div class="project-meta">
-            <span class="project-type">WordPress</span>
-            <span class="project-num">05</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Vodvezu.cz</h3>
-            <p class="project-desc">Redesign webu pre prepravnú spoločnosť. Nový hero section, about sekcia s tímovou fotografiou a moderný layout s dôrazom na dôveryhodnosť.</p>
-            <a href="https://vodvezu.cz" target="_blank" rel="noopener" class="project-link" id="linkVodvezu">vodvezu.cz &rarr;</a>
-          </div>
-          <div class="project-thumb">
-            <img src="assets/vodvezu screenshot.jpg" alt="Vodvezu" />
-          </div>
-        </article>
-
-        <article class="project-item" data-category="shoptet" id="projectSportcode">
-          <div class="project-meta">
-            <span class="project-type">Shoptet</span>
-            <span class="project-num">06</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Sportcode</h3>
-            <p class="project-desc">Šport a fitness e-shop na Shoptete. Tile grid layout, úprava produktových kariet a kategórií, oprava medzier a celková štylizácia front-endu.</p>
-            <a href="https://sportcode.cz" target="_blank" rel="noopener" class="project-link" id="linkSportcode">sportcode.cz &rarr;</a>
-          </div>
-          <div class="project-thumb">
-            <img src="assets/Sportcode screenshot.jpg" alt="Sportcode" />
-          </div>
-        </article>
-
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- KONTAKT -->
-  <section class="section section-alt" id="kontakt">
-    <div class="container">
-      <div class="section-eyebrow">Kontakt</div>
-      <div class="contact-layout">
+    <!-- PROJEKTY -->
+    <section class="section work-section" id="projekty">
+      <div class="wrap">
+        <div class="work-head">
+          <h2 class="h2">Vybrané práce</h2>
+          <div class="filter" id="projectsFilter" role="group" aria-label="Filtrovať projekty">
+            <button class="filter-btn is-active" data-filter="all" id="filterAll" aria-pressed="true">Všetky</button>
+            <button class="filter-btn" data-filter="shoptet" id="filterShoptet" aria-pressed="false">Shoptet</button>
+            <button class="filter-btn" data-filter="wordpress" id="filterWordpress" aria-pressed="false">WordPress</button>
+          </div>
+        </div>
+
+        <div class="work-grid" id="projectsGrid">
+          <article class="work" data-category="shoptet" id="projectEpultik">
+            <a class="work-shot" href="https://epultik.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/work/epultik.webp" alt="E-shop ePultík na Shoptete, práca Patrika Dzurošku" width="1400" height="695" loading="lazy" />
+            </a>
+            <div class="work-info">
+              <div class="work-row"><h3 class="work-title">ePultík</h3><span class="work-type">Shoptet</span></div>
+              <p class="work-desc">Rozvoz čerstvých potravín a catering. Vlastné riešenia: bannery, rozvozová mapa, catering sekcia, „Napísali o nás“, firemné stránky a produktové šablóny pre lokálnych výrobcov.</p>
+              <a href="https://epultik.cz" target="_blank" rel="noopener" class="work-link" id="linkEpultik">epultik.cz</a>
+            </div>
+          </article>
+
+          <article class="work" data-category="wordpress" id="projectCleverNajem">
+            <a class="work-shot" href="https://clevernajem.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/work/clever-najem.webp" alt="Web Clever Nájem na WordPresse, práca Patrika Dzurošku" width="1400" height="800" loading="lazy" />
+            </a>
+            <div class="work-info">
+              <div class="work-row"><h3 class="work-title">Clever Nájem</h3><span class="work-type">WordPress</span></div>
+              <p class="work-desc">Kompletná úprava hlavnej stránky pre platformu prenájmu nehnuteľností. Nová landing page, sekcie s ikonami, oprava layoutu a celkový redesign homepage.</p>
+              <a href="https://clevernajem.cz" target="_blank" rel="noopener" class="work-link" id="linkCleverNajem">clevernajem.cz</a>
+            </div>
+          </article>
+
+          <article class="work" data-category="wordpress" id="projectDomyBoranovice">
+            <a class="work-shot" href="https://domyboranovice.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/work/domy-boranovice.webp" alt="Web Domy Bořanovice na WordPresse, práca Patrika Dzurošku" width="1400" height="694" loading="lazy" />
+            </a>
+            <div class="work-info">
+              <div class="work-row"><h3 class="work-title">Domy Bořanovice</h3><span class="work-type">WordPress</span></div>
+              <p class="work-desc">Prezentačný web pre luxusné rodinné domy. Fotogaléria nehnuteľností, vizualizácie exteriérov a interiérov, pôdorysy a architektonické pohľady.</p>
+              <a href="https://domyboranovice.cz" target="_blank" rel="noopener" class="work-link" id="linkDomyBoranovice">domyboranovice.cz</a>
+            </div>
+          </article>
+
+          <article class="work" data-category="shoptet" id="projectVetriscience">
+            <a class="work-shot" href="https://vetriscience.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/work/vetriscience.webp" alt="E-shop Vetriscience na Shoptete, práca Patrika Dzurošku" width="1400" height="931" loading="lazy" />
+            </a>
+            <div class="work-info">
+              <div class="work-row"><h3 class="work-title">Vetriscience / Traumapet</h3><span class="work-type">Shoptet</span></div>
+              <p class="work-desc">E-shop so zvieracími doplnkami stravy: produkty na imunitný systém, kĺby a zdravie domácich miláčikov. Tvorba kategórií, produktových šablón a CSS štýlovania.</p>
+              <a href="https://vetriscience.cz" target="_blank" rel="noopener" class="work-link" id="linkVetriscience">vetriscience.cz</a>
+            </div>
+          </article>
+
+          <article class="work" data-category="wordpress" id="projectVodvezu">
+            <a class="work-shot" href="https://vodvezu.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/work/vodvezu.webp" alt="Web Vodvezu.cz na WordPresse, práca Patrika Dzurošku" width="1400" height="790" loading="lazy" />
+            </a>
+            <div class="work-info">
+              <div class="work-row"><h3 class="work-title">Vodvezu.cz</h3><span class="work-type">WordPress</span></div>
+              <p class="work-desc">Redesign webu pre prepravnú spoločnosť. Nový hero section, about sekcia s tímovou fotografiou a moderný layout s dôrazom na dôveryhodnosť.</p>
+              <a href="https://vodvezu.cz" target="_blank" rel="noopener" class="work-link" id="linkVodvezu">vodvezu.cz</a>
+            </div>
+          </article>
+
+          <article class="work" data-category="shoptet" id="projectSportcode">
+            <a class="work-shot" href="https://sportcode.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/work/sportcode.webp" alt="E-shop Sportcode na Shoptete, práca Patrika Dzurošku" width="1400" height="788" loading="lazy" />
+            </a>
+            <div class="work-info">
+              <div class="work-row"><h3 class="work-title">Sportcode</h3><span class="work-type">Shoptet</span></div>
+              <p class="work-desc">Šport a fitness e-shop na Shoptete. Tile grid layout, úprava produktových kariet a kategórií, oprava medzier a celková štylizácia front-endu.</p>
+              <a href="https://sportcode.cz" target="_blank" rel="noopener" class="work-link" id="linkSportcode">sportcode.cz</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="section contact" id="kontakt">
+      <div class="wrap contact-grid">
         <div class="contact-left">
-          <h2 class="section-heading">Máte projekt?<br>Porozprávajme sa.</h2>
+          <h2 class="h2">Máte projekt? Porozprávajme sa.</h2>
+          <a href="tel:+421949363438" class="big-phone" id="contactPhone">0949 363 438</a>
+          <p class="contact-meta">
+            <a href="mailto:patrikdzuroska23@gmail.com" class="link-u" id="contactEmail">patrikdzuroska23@gmail.com</a><br />
+            Zo zahraničia <a href="tel:+421949363438" class="link-u">+421 949 363 438</a>
+          </p>
           <p class="contact-sub">Odpoviem do 24 hodín.</p>
-          <div class="contact-details">
-            <a href="mailto:patrikdzuroska23@gmail.com" class="contact-line" id="contactEmail">patrikdzuroska23@gmail.com</a>
-            <a href="tel:+421949363438" class="contact-line" id="contactPhone">+421 949 363 438</a>
-          </div>
         </div>
-        <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/patrikdzuroska23@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
-          <input type="hidden" name="_captcha" value="false">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="formName">Meno</label>
-              <input type="text" id="formName" name="name" placeholder="Vaše meno" required />
-            </div>
-            <div class="form-group">
-              <label for="formEmail">Email</label>
-              <input type="email" id="formEmail" name="email" placeholder="vas@email.com" required />
-            </div>
+
+        <form class="form" id="contactForm" action="https://formsubmit.co/ajax/patrikdzuroska23@gmail.com" method="POST" novalidate>
+          <input type="hidden" name="_captcha" value="false" />
+          <div class="field">
+            <label for="formName">Meno</label>
+            <input type="text" id="formName" name="name" autocomplete="name" required />
           </div>
-          <div class="form-group">
+          <div class="field">
+            <label for="formEmail">E-mail</label>
+            <input type="email" id="formEmail" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
             <label for="formMsg">Správa</label>
-            <textarea id="formMsg" name="message" placeholder="Popíšte projekt..." rows="5" required></textarea>
+            <textarea id="formMsg" name="message" rows="5" required aria-describedby="formMsgHelp"></textarea>
+            <p class="field-help" id="formMsgHelp">Stačí pár viet: čo potrebujete a dokedy.</p>
           </div>
-          <button type="submit" class="btn-primary" id="formSubmitBtn">
-            <span id="formBtnText">Odoslať správu</span>
-          </button>
-          <div class="form-success" id="formSuccess">Správa odoslaná. Ozvem sa čoskoro.</div>
+          <div class="form-foot">
+            <button type="submit" class="btn" id="formSubmitBtn"><span id="formBtnText">Odoslať správu</span></button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </div>
         </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
   <footer class="footer" id="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-name">Patrik Dzuroška</span>
-        <span class="footer-copy">&copy; 2025</span>
-        <button class="footer-top" id="backToTop" aria-label="Späť nahor" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
-      </div>
+    <div class="wrap footer-inner">
+      <p class="footer-name">Patrik Dzuroška</p>
+      <p class="footer-contact">
+        <a href="tel:+421949363438">0949 363 438</a>
+        <a href="mailto:patrikdzuroska23@gmail.com">patrikdzuroska23@gmail.com</a>
+      </p>
+      <p class="footer-copy">&copy; 2026 Patrik Dzuroška</p>
+      <a href="#hero" class="footer-top" id="backToTop">Hore</a>
     </div>
   </footer>
 
-  <button class="back-to-top" id="backToTopFixed" aria-label="Nahor" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
-
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
