@@ -36,4 +36,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://patrikdzuroska.dev/sitemap.xml
+Sitemap: https://www.patrikdzuroska.dev/sitemap.xml

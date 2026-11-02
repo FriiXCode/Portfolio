@@ -8,7 +8,7 @@ Patrik Dzuroška (also written Patrik Dzuroska) is a Slovak web developer specia
 
 - Telefón: 0949 363 438 (medzinárodne +421 949 363 438)
 - E-mail: patrikdzuroska23@gmail.com
-- Web: https://patrikdzuroska.dev/
+- Web: https://www.patrikdzuroska.dev/
 - Krajina: Slovensko, pracuje pre klientov zo Slovenska a Česka
 - Jazyky: slovenčina, čeština
 
@@ -31,4 +31,4 @@ Patrik Dzuroška (also written Patrik Dzuroska) is a Slovak web developer specia
 
 ## Stránky
 
-- [Portfólio](https://patrikdzuroska.dev/): celé portfólio, kontakty a formulár
+- [Portfólio](https://www.patrikdzuroska.dev/): celé portfólio, kontakty a formulár

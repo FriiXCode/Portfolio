@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://patrikdzuroska.dev/</loc>
+    <loc>https://www.patrikdzuroska.dev/</loc>
     <lastmod>2026-11-02</lastmod>
-    <image:image><image:loc>https://patrikdzuroska.dev/assets/patrik-dzuroska.jpg</image:loc></image:image>
-    <image:image><image:loc>https://patrikdzuroska.dev/assets/og-image.jpg</image:loc></image:image>
-    <image:image><image:loc>https://patrikdzuroska.dev/assets/work/cyklodiskont.webp</image:loc></image:image>
-    <image:image><image:loc>https://patrikdzuroska.dev/assets/work/ifboutique.webp</image:loc></image:image>
-    <image:image><image:loc>https://patrikdzuroska.dev/assets/work/clever-najem.webp</image:loc></image:image>
-    <image:image><image:loc>https://patrikdzuroska.dev/assets/work/domy-boranovice.webp</image:loc></image:image>
-    <image:image><image:loc>https://patrikdzuroska.dev/assets/work/vetriscience.webp</image:loc></image:image>
-    <image:image><image:loc>https://patrikdzuroska.dev/assets/work/vodvezu.webp</image:loc></image:image>
-    <image:image><image:loc>https://patrikdzuroska.dev/assets/work/sportcode.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.patrikdzuroska.dev/assets/patrik-dzuroska.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.patrikdzuroska.dev/assets/og-image.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.patrikdzuroska.dev/assets/work/cyklodiskont.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.patrikdzuroska.dev/assets/work/ifboutique.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.patrikdzuroska.dev/assets/work/clever-najem.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.patrikdzuroska.dev/assets/work/domy-boranovice.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.patrikdzuroska.dev/assets/work/vetriscience.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.patrikdzuroska.dev/assets/work/vodvezu.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.patrikdzuroska.dev/assets/work/sportcode.webp</image:loc></image:image>
   </url>
 </urlset>
