@@ -21,7 +21,8 @@ Patrik Dzuroška (also written Patrik Dzuroska) is a Slovak web developer specia
 
 ## Projekty
 
-- [ePultík](https://epultik.cz): Shoptet e-shop, rozvoz čerstvých potravín a catering
+- [Cyklodiskont](https://www.cyklodiskont.cz): Shoptet e-shop s bicyklami, elektrobicyklami a cyklistickým vybavením
+- [IF Boutique](https://www.ifboutique.cz): Shoptet e-shop s dámskou módou, prémiový dizajn hlavnej stránky
 - [Clever Nájem](https://clevernajem.cz): WordPress, redesign hlavnej stránky platformy prenájmu nehnuteľností
 - [Domy Bořanovice](https://domyboranovice.cz): WordPress, prezentačný web pre luxusné rodinné domy
 - [Vetriscience / Traumapet](https://vetriscience.cz): Shoptet e-shop so zvieracími doplnkami stravy

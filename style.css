@@ -429,6 +429,7 @@ strong { font-weight: 650; }
 .work-grid:not(.is-filtered) .work:nth-child(4) { grid-column: 6 / span 7; margin-top: clamp(2rem, 6vw, 5rem); }
 .work-grid:not(.is-filtered) .work:nth-child(5) { grid-column: 2 / span 6; }
 .work-grid:not(.is-filtered) .work:nth-child(6) { grid-column: 9 / span 4; margin-top: clamp(3rem, 8vw, 7rem); }
+.work-grid:not(.is-filtered) .work:nth-child(7) { grid-column: 4 / span 7; }
 .work[hidden] { display: none; }
 
 .work-shot {
