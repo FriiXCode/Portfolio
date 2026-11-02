@@ -287,6 +287,7 @@ strong { font-weight: 650; }
   --spread: 7deg;
   position: relative;
   height: calc(var(--card-w) * .8);
+  transform: perspective(1400px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
 }
 .deck-card {
   --rot: calc((var(--i) - 2.5) * var(--spread));
@@ -543,6 +544,77 @@ strong { font-weight: 650; }
 .footer-contact a:hover, .footer-top:hover { color: var(--ink); }
 .footer-copy { color: var(--muted); }
 
+/* ---------- Scroll motion ----------
+   One vocabulary: headings stretch into their width, images are wiped in
+   like ink, the phone number rolls in. Elements get .in from an observer. */
+
+/* Headings: narrow cut widens into the house width */
+.js .h2 {
+  font-stretch: 82%;
+  opacity: 0;
+  transform: translateY(.35em);
+  transition: font-stretch 1.2s var(--ease), opacity .7s ease, transform 1s var(--ease);
+}
+.js .h2.in { font-stretch: 112%; opacity: 1; transform: none; }
+
+/* Images: bottom-up wipe */
+.js .work-shot,
+.js .portrait {
+  clip-path: inset(100% 0 0 0 round 4px);
+  transition: clip-path 1.15s var(--ease);
+}
+.js .work.in .work-shot,
+.js .about-grid.in .portrait { clip-path: inset(0 0 0 0 round 4px); }
+
+.js .work-info {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease .25s, transform .9s var(--ease) .25s;
+}
+.js .work.in .work-info { opacity: 1; transform: none; }
+
+/* Skills: panels rise in sequence */
+.js .skill {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .9s var(--ease);
+}
+.js .skill.in { opacity: 1; transform: none; }
+.js .skill:nth-child(2) { transition-delay: .1s; }
+
+/* Skills: the big names squeeze and spring back on hover */
+.skill--lead .skill-name {
+  transition: font-stretch .7s cubic-bezier(.34, 1.56, .64, 1), letter-spacing .7s cubic-bezier(.34, 1.56, .64, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .skill--lead:hover .skill-name { font-stretch: 78%; letter-spacing: .01em; }
+}
+
+/* Phone number: digits roll in like a counter */
+.big-phone .d { display: inline-block; }
+.js .big-phone { overflow: hidden; vertical-align: top; }
+.js .big-phone .d {
+  transform: translateY(110%);
+  transition: transform .9s var(--ease) calc(var(--n) * 45ms);
+}
+.js .big-phone.in .d { transform: none; }
+
+/* Parallax inside project frames, where scroll-driven animations exist */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .work-shot img {
+      height: 114%;
+      animation: shot-drift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+    @keyframes shot-drift {
+      from { translate: 0 0; }
+      to   { translate: 0 -12.3%; }
+    }
+  }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .skills-side .skill { grid-template-columns: 1fr; gap: .35rem; }
@@ -597,6 +669,10 @@ strong { font-weight: 650; }
   .js .deck-card, .js .hero-claim .line > span, .js .hero-name, .js .hero-copy { opacity: 1; }
   .js .hero-claim .line > span { transform: none; }
   .js .deck-card { transform: rotate(var(--rot)); }
+  .js .h2, .js .skill, .js .work-info { opacity: 1; transform: none; font-stretch: 112%; }
+  .js .work-shot, .js .portrait { clip-path: none; }
+  .js .big-phone .d { transform: none; }
+  .deck { transform: none; }
 }
 
 @media print {

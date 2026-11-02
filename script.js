@@ -36,6 +36,53 @@
   systemDark.addEventListener('change', syncToggle);
   syncToggle();
 
+  // ---- Scroll reveals: one observer, elements get .in once ----
+  const phone = document.getElementById('contactPhone');
+  if (phone) {
+    const text = phone.textContent.trim();
+    phone.setAttribute('aria-label', text);
+    let n = 0;
+    phone.innerHTML = [...text].map(ch => ch === ' '
+      ? ' '
+      : `<span class="d" aria-hidden="true" style="--n:${n++}">${ch}</span>`).join('');
+  }
+  const revealTargets = document.querySelectorAll('.h2, .work, .about-grid, .skill, .big-phone');
+  if ('IntersectionObserver' in window) {
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('in');
+        revealObs.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+    revealTargets.forEach(el => revealObs.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('in'));
+  }
+
+  // ---- Hero deck leans toward the pointer (fine pointers only) ----
+  const deck = document.querySelector('.deck');
+  const hero = document.getElementById('hero');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (deck && hero && finePointer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+    const step = () => {
+      cx += (tx - cx) * 0.08;
+      cy += (ty - cy) * 0.08;
+      deck.style.setProperty('--ry', `${(cx * 7).toFixed(2)}deg`);
+      deck.style.setProperty('--rx', `${(-cy * 5).toFixed(2)}deg`);
+      raf = (Math.abs(tx - cx) > 0.001 || Math.abs(ty - cy) > 0.001) ? requestAnimationFrame(step) : 0;
+    };
+    const kick = () => { if (!raf) raf = requestAnimationFrame(step); };
+    hero.addEventListener('pointermove', e => {
+      const r = deck.getBoundingClientRect();
+      tx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (window.innerWidth / 2)));
+      ty = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (window.innerHeight / 2)));
+      kick();
+    });
+    hero.addEventListener('pointerleave', () => { tx = 0; ty = 0; kick(); });
+  }
+
   // ---- Nav background once the hero top leaves the viewport ----
   const navbar = document.getElementById('navbar');
   const sentinel = document.createElement('div');
