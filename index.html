@@ -164,11 +164,11 @@
     <section class="hero" id="hero">
       <div class="wrap">
         <h1 class="hero-title">
-          <span class="hero-name">Patrik Dzuroška</span>
           <span class="hero-claim">
             <span class="line"><span>Tvorím weby,</span></span>
             <span class="line"><span>ktoré predávajú.</span></span>
           </span>
+          <span class="hero-name">Patrik Dzuroška</span>
         </h1>
 
         <div class="hero-foot">
@@ -178,6 +178,7 @@
               <a href="#projekty" class="btn" id="heroProjektyBtn">Zobraziť projekty</a>
               <a href="#kontakt" class="link-u" id="heroKontaktBtn">Napísať mi</a>
             </div>
+            <p class="status"><span class="status-dot" aria-hidden="true"></span>Otvorený pracovným ponukám: remote, part-time</p>
           </div>
 
           <div class="deck" aria-hidden="true">
@@ -251,7 +252,7 @@
 
         <div class="work-grid" id="projectsGrid">
           <article class="work" data-category="shoptet" id="projectCyklodiskont">
-            <a class="work-shot" href="https://www.cyklodiskont.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="work-shot" href="assets/work/cyklodiskont.webp" aria-label="Zväčšiť náhľad projektu Cyklodiskont">
               <img src="assets/work/cyklodiskont.webp" alt="E-shop Cyklodiskont na Shoptete, práca Patrika Dzurošku" width="1425" height="900" loading="lazy" />
             </a>
             <div class="work-info">
@@ -261,7 +262,7 @@
             </div>
           </article>
           <article class="work" data-category="shoptet" id="projectIfBoutique">
-            <a class="work-shot" href="https://www.ifboutique.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="work-shot" href="assets/work/ifboutique.webp" aria-label="Zväčšiť náhľad projektu IF Boutique">
               <img src="assets/work/ifboutique.webp" alt="E-shop IF Boutique na Shoptete, práca Patrika Dzurošku" width="1425" height="890" loading="lazy" />
             </a>
             <div class="work-info">
@@ -272,7 +273,7 @@
           </article>
 
           <article class="work" data-category="wordpress" id="projectCleverNajem">
-            <a class="work-shot" href="https://clevernajem.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="work-shot" href="assets/work/clever-najem.webp" aria-label="Zväčšiť náhľad projektu Clever Nájem">
               <img src="assets/work/clever-najem.webp" alt="Web Clever Nájem na WordPresse, práca Patrika Dzurošku" width="1400" height="800" loading="lazy" />
             </a>
             <div class="work-info">
@@ -283,7 +284,7 @@
           </article>
 
           <article class="work" data-category="wordpress" id="projectDomyBoranovice">
-            <a class="work-shot" href="https://domyboranovice.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="work-shot" href="assets/work/domy-boranovice.webp" aria-label="Zväčšiť náhľad projektu Domy Bořanovice">
               <img src="assets/work/domy-boranovice.webp" alt="Web Domy Bořanovice na WordPresse, práca Patrika Dzurošku" width="1400" height="694" loading="lazy" />
             </a>
             <div class="work-info">
@@ -294,7 +295,7 @@
           </article>
 
           <article class="work" data-category="shoptet" id="projectVetriscience">
-            <a class="work-shot" href="https://vetriscience.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="work-shot" href="assets/work/vetriscience.webp" aria-label="Zväčšiť náhľad projektu Vetriscience / Traumapet">
               <img src="assets/work/vetriscience.webp" alt="E-shop Vetriscience na Shoptete, práca Patrika Dzurošku" width="1400" height="931" loading="lazy" />
             </a>
             <div class="work-info">
@@ -305,7 +306,7 @@
           </article>
 
           <article class="work" data-category="wordpress" id="projectVodvezu">
-            <a class="work-shot" href="https://vodvezu.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="work-shot" href="assets/work/vodvezu.webp" aria-label="Zväčšiť náhľad projektu Vodvezu.cz">
               <img src="assets/work/vodvezu.webp" alt="Web Vodvezu.cz na WordPresse, práca Patrika Dzurošku" width="1400" height="790" loading="lazy" />
             </a>
             <div class="work-info">
@@ -316,7 +317,7 @@
           </article>
 
           <article class="work" data-category="shoptet" id="projectSportcode">
-            <a class="work-shot" href="https://sportcode.cz" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="work-shot" href="assets/work/sportcode.webp" aria-label="Zväčšiť náhľad projektu Sportcode">
               <img src="assets/work/sportcode.webp" alt="E-shop Sportcode na Shoptete, práca Patrika Dzurošku" width="1400" height="788" loading="lazy" />
             </a>
             <div class="work-info">
@@ -325,6 +326,17 @@
               <a href="https://sportcode.cz" target="_blank" rel="noopener" class="work-link" id="linkSportcode">sportcode.cz</a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTO WEB -->
+    <section class="section built" id="tento-web">
+      <div class="wrap built-grid">
+        <h2 class="h2">Ručná práca. Bez frameworku, bez šablóny.</h2>
+        <div class="built-side">
+          <p class="built-live" id="builtLive" hidden>Práve sa vám načítal za <b id="builtTime"></b>. Všetko, čo ste doteraz videli, váži <b id="builtSize"></b>.</p>
+          <p class="built-facts">Tento web je čisté HTML, CSS a JavaScript bez jedinej knižnice. Jedno variabilné písmo uložené priamo na webe. Svetlý aj tmavý režim. Žiadne cookies ani sledovanie.</p>
         </div>
       </div>
     </section>
@@ -339,7 +351,7 @@
             <a href="mailto:patrikdzuroska23@gmail.com" class="link-u" id="contactEmail">patrikdzuroska23@gmail.com</a><br />
             Zo zahraničia <a href="tel:+421949363438" class="link-u">+421 949 363 438</a>
           </p>
-          <p class="contact-sub">Odpoviem do 24 hodín.</p>
+          <p class="contact-sub">Odpoviem do 24 hodín. Som otvorený aj pracovným ponukám: remote, part-time.</p>
         </div>
 
         <form class="form" id="contactForm" action="https://formsubmit.co/ajax/patrikdzuroska23@gmail.com" method="POST" novalidate>
@@ -365,6 +377,27 @@
       </div>
     </section>
   </main>
+
+  <dialog class="viewer" id="viewer" aria-labelledby="viewerTitle">
+    <div class="viewer-inner">
+      <div class="viewer-bar">
+        <div class="viewer-nav">
+          <button type="button" class="chip" id="viewerPrev">Predošlý</button>
+          <button type="button" class="chip" id="viewerNext">Ďalší</button>
+        </div>
+        <button type="button" class="chip" id="viewerClose">Zavrieť</button>
+      </div>
+      <figure class="viewer-shot"><img id="viewerImg" alt="" /></figure>
+      <div class="viewer-info">
+        <div>
+          <h2 class="viewer-title" id="viewerTitle"></h2>
+          <p class="viewer-type" id="viewerType"></p>
+        </div>
+        <p class="viewer-desc" id="viewerDesc"></p>
+        <a class="btn" id="viewerLink" href="#" target="_blank" rel="noopener">Otvoriť web</a>
+      </div>
+    </div>
+  </dialog>
 
   <footer class="footer" id="footer">
     <div class="wrap footer-inner">

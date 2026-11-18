@@ -11,6 +11,7 @@ Patrik Dzuroška (also written Patrik Dzuroska) is a Slovak web developer specia
 - Web: https://www.patrikdzuroska.dev/
 - Krajina: Slovensko, pracuje pre klientov zo Slovenska a Česka
 - Jazyky: slovenčina, čeština
+- Dostupnosť: otvorený pracovným ponukám ako web developer (remote, part-time)
 
 ## Služby
 
