@@ -651,27 +651,6 @@ input, textarea { caret-color: var(--ink); }
   }
 }
 
-/* ---------- Built block: live numbers about this very page ---------- */
-.built { padding-top: 0; }
-.built-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: clamp(2rem, 5vw, 5rem);
-  align-items: end;
-}
-.built-live {
-  font-size: clamp(1.2rem, 1.9vw, 1.55rem);
-  line-height: 1.4;
-  text-wrap: pretty;
-}
-.built-live b {
-  color: var(--ink);
-  font-weight: 780; font-stretch: 112%;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.built-facts { margin-top: 1.1rem; color: var(--muted); max-width: 46ch; }
-
 /* ---------- Project viewer ---------- */
 .chip {
   min-height: 42px; padding: 0 1.1rem;
@@ -783,7 +762,6 @@ input, textarea { caret-color: var(--ink); }
   .work-grid:not(.is-filtered) .work:nth-child(n) { grid-column: 1 / -1; margin-top: 0; }
 
   .contact-grid { grid-template-columns: 1fr; }
-  .built-grid { grid-template-columns: 1fr; align-items: start; }
   .viewer-info { grid-template-columns: 1fr; }
   .viewer-shot img { max-height: none; }
   .deck { margin-top: 2.5rem; }

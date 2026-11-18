@@ -336,27 +336,6 @@
     if (e.key === 'ArrowLeft') go(-1);
   });
 
-  // ---- This page, measured in the visitor's own browser ----
-  const built = document.getElementById('tento-web');
-  const fmt = (n, d) => n.toLocaleString('sk-SK', { minimumFractionDigits: d, maximumFractionDigits: d });
-  if (built && 'performance' in window && performance.getEntriesByType) {
-    const fillBuilt = () => {
-      const nav = performance.getEntriesByType('navigation')[0];
-      const res = performance.getEntriesByType('resource');
-      const bytes = [nav, ...res].reduce((sum, e) => sum + (e ? (e.transferSize || e.encodedBodySize || 0) : 0), 0);
-      const ms = nav && nav.loadEventEnd > 0 ? nav.loadEventEnd : 0;
-      if (!bytes || !ms) return;
-      document.getElementById('builtTime').textContent = ms < 1000 ? `${fmt(ms / 1000, 2)} s` : `${fmt(ms / 1000, 1)} s`;
-      document.getElementById('builtSize').textContent = bytes < 1048576 ? `${Math.round(bytes / 1024)} kB` : `${fmt(bytes / 1048576, 1)} MB`;
-      document.getElementById('builtLive').hidden = false;
-    };
-    new IntersectionObserver(([entry], obs) => {
-      if (!entry.isIntersecting) return;
-      obs.disconnect();
-      if (document.readyState === 'complete') fillBuilt(); else window.addEventListener('load', fillBuilt);
-    }, { rootMargin: '0px 0px 25% 0px' }).observe(built);
-  }
-
   // ---- Contact form ----
   const form = document.getElementById('contactForm');
   const btn = document.getElementById('formSubmitBtn');
